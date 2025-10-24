@@ -1,0 +1,290 @@
+jQuery(document).ready(function () {
+
+    jQuery(window).load(function () {
+        jQuery('.dp_ppp_module.et_pb_filterable_portfolio').each(function () {
+            var active_filter = jQuery(this).attr('data-filter');
+            if (active_filter !== "") {
+                var parent = jQuery(this);
+                var filter = parent.find('.ppp_filterable_link[data-category-filter="' + active_filter + '"]');
+                filter.parent('li').siblings('li.et_pb_portfolio_filter_all').children('a').removeClass('active');
+                setTimeout(function () {
+                    filter.click();
+                }, '1');
+            }
+        });
+    });
+
+    jQuery(document).on('click', '.et_pb_portfolio_filter', function () {
+        var items_container = jQuery(this).parent('ul').parent('div').siblings('div.et_pb_portfolio_items_wrapper').children('div.et_pb_portfolio_items');
+        items_container.children('div.et_pb_portfolio_item').children('a.et_pb_lightbox_image').each(function () {
+            jQuery(this).magnificPopup({
+                type: 'image',
+                removalDelay: 500,
+                mainClass: 'mfp-fade',
+                zoom: {
+                    enabled: true,
+                    duration: 500,
+                    opener: function (element) {
+                        return element.find('img');
+                    }
+                }
+            });
+        });
+    });
+
+    jQuery('#modal_inner iframe').load(function () {
+        jQuery('.et_pb_loader_img').css('display', 'none');
+        jQuery(this).closest('.modal').addClass('active');
+    });
+
+    jQuery(document).on('click', '.et_pb_lightbox_post_popup', function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        jQuery('body').css({"overflow-y": 'hidden'});
+        var iphone = ['iPhone'].indexOf(navigator.platform) >= 0;
+        var ipad = ['iPad'].indexOf(navigator.platform) >= 0;
+        jQuery('iframe#dp_iframe').attr("src", jQuery(this).attr("data-ajaxurl"));
+        jQuery('.et_pb_loader_img').css('display', 'block');
+        var section = jQuery("body");
+        var modal_overlay = jQuery("body .modal_overlay");
+        var modal = jQuery("body .modal_overlay .modal");
+        section.append(modal_overlay);
+        modal_overlay.css('display', 'block');
+        modal.css('display', 'block');
+        if (iphone || ipad) {
+            jQuery('.modal_inner').addClass('ios');
+        }
+    });
+
+    jQuery(document).on('click', '.modal_overlay, .pop_up_close_btn', function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        jQuery('iframe#dp_iframe').contents().empty();
+        jQuery('body .modal_overlay').css('display', 'none');
+        jQuery('.et_pb_loader_img').css('display', 'block');
+        jQuery(this).closest('.modal').removeClass('active');
+        jQuery('body').css({"overflow-y": 'scroll'});
+    });
+
+    jQuery(document).on('click', '.dp_ppp_module a.dp_ppp_lightbox_image', function (ev) {
+        ev.preventDefault();
+        var args = {
+            type: 'image',
+            removalDelay: 700,
+            mainClass: 'mfp-fade dp-ppp-lightbox'
+        };
+        var dp_ppp_gallery_images = [];
+        var dp_ppp_gallery_titles = [];
+        var index = 0;
+        var start_at = 0;
+        var trigger_by = jQuery(this).prop('href');
+        if (jQuery(this).find('.dp_ppp_post_thumb').attr('data-lightbox-gallery') === 'on') {
+            jQuery(this).parents('.et_pb_module').find('.dp_ppp_lightbox_image').each(function () {
+                if (jQuery(this).find('.dp_ppp_post_thumb').length !== 0) {
+                    if (trigger_by === jQuery(this).prop('href')) {
+                        start_at = index;
+                    }
+                    index++;
+                    dp_ppp_gallery_images.push(jQuery(this).prop('href'));
+                    dp_ppp_gallery_titles.push(jQuery(this).find('.dp_ppp_post_thumb').attr('alt'));
+                }
+            });
+            args['gallery'] = {
+                enabled: true,
+                navigateByImgClick: true
+            };
+        } else {
+            if (jQuery(this).find('.dp_ppp_post_thumb').length !== 0) {
+                dp_ppp_gallery_images.push(jQuery(this).prop('href'));
+                dp_ppp_gallery_titles.push(jQuery(this).find('.dp_ppp_post_thumb').attr('alt'));
+            }
+        }
+        for (var item in dp_ppp_gallery_images) {
+            dp_ppp_gallery_images[item] = {'src': dp_ppp_gallery_images[item], 'title': dp_ppp_gallery_titles[item]};
+        }
+        args['items'] = dp_ppp_gallery_images;
+        jQuery.magnificPopup.open(args, start_at);
+    });
+
+    jQuery(document).on('click', '.dp_ppp_module a.dp_ppp_gallery_cf', function (ev) {
+        ev.preventDefault();
+        var args = {
+            type: 'image',
+            removalDelay: 700,
+            mainClass: 'mfp-fade dp-ppp-lightbox',
+            'gallery': {
+                enabled: true,
+                navigateByImgClick: true
+            }
+        };
+        var images = [];
+        var data_images = jQuery(this).attr("data-images");
+        data_images = data_images.split("||");
+        for (var item in data_images) {
+            images.push({'src': data_images[item]});
+        }
+        args['items'] = images;
+        jQuery.magnificPopup.open(args, 0);
+    });
+
+    if (typeof window.et_builder_version !== undefined) {
+        var modal = '<div id="dp-ppp-vb-wrapper"><div id="dp-ppp-vb-modal"><div class="et-fb-loader-wrapper dp-ppp-vb-loader"><div class="et-fb-loader"></div></div></div></div>';
+        jQuery(document).on('focus', '#et-fb-custom_post_types', function () {
+            if (isPppVbModule(jQuery(this))) {
+                var cpt_input = jQuery(this);
+                var input_values = jQuery(this).val();
+                if (input_values !== '') {
+                    if (input_values.includes(',')) {
+                        input_values = input_values.split(',');
+                    } else {
+                        input_values = [input_values];
+                    }
+                }
+                if (jQuery('body').find('#dp-ppp-vb-wrapper').length === 0) {
+                    jQuery('body').append(modal);
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: window.et_fb_options.ajaxurl,
+                        data: {action: 'dpppp_get_cpt_action'}
+                    }).done(function (data, textStatus, jqXHR) {
+                        jQuery('.dp-ppp-vb-loader').remove();
+                        jQuery('#dp-ppp-vb-modal').append(data);
+                        jQuery('#dp-ppp-vb-modal').find('option').each(function () {
+                            var opt_val = jQuery(this).val();
+                            if (input_values.includes(opt_val)) {
+                                jQuery(this).prop('selected', true);
+                            }
+                        });
+                        jQuery('.dp-ppp-vb-submit').click(function () {
+                            var cpt = jQuery('.dp-ppp-vb-select').val();
+                            cpt_input.trigger('focus').val(cpt.join(',')).trigger('blur');
+                            jQuery('.dp-ppp-vb-finish').click();
+                        });
+                        jQuery('.dp-ppp-vb-finish').click(function () {
+                            jQuery('#dp-ppp-vb-wrapper').remove();
+                        });
+                        jQuery('.dp-ppp-vb-clean').click(function () {
+                            cpt_input.trigger('focus').val('').trigger('blur');
+                        });
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        jQuery('#dp-ppp-vb-modal').append(errorThrown);
+                    });
+                }
+            }
+        });
+        /*
+         * Vb Ajax modal for taxonomies
+         */
+        jQuery(document).on('focus', '#et-fb-taxonomy_tags', function () {
+            if (isPppVbModule(jQuery(this))) {
+                var taxonomies_input = jQuery(this);
+                var input_values = jQuery(this).val();
+                var cpt = jQuery('#et-fb-custom_post_types').val();
+                if (input_values !== '') {
+                    if (input_values.includes(',')) {
+                        input_values = input_values.split(',');
+                    } else {
+                        input_values = [input_values];
+                    }
+                }
+                if (jQuery('body').find('#dp-ppp-vb-wrapper').length === 0) {
+                    jQuery('body').append(modal);
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: window.et_fb_options.ajaxurl,
+                        data: {
+                            action: 'dpppp_get_taxonomies_action',
+                            cpt: (cpt === undefined || cpt === '') ? 'post' : cpt,
+                        }
+                    }).done(function (data, textStatus, jqXHR) {
+                        jQuery('.dp-ppp-vb-loader').remove();
+                        jQuery('#dp-ppp-vb-modal').append(data);
+                        jQuery('#dp-ppp-vb-modal').find('option').each(function () {
+                            var opt_val = jQuery(this).val();
+                            if (input_values.includes(opt_val)) {
+                                jQuery(this).prop('selected', true);
+                            }
+                        });
+                        jQuery('.dp-ppp-vb-submit').click(function () {
+                            var taxonomies = jQuery('.dp-ppp-vb-select').val();
+                            taxonomies_input.trigger('focus').val(taxonomies.join(',')).trigger('blur');
+                            jQuery('.dp-ppp-vb-finish').click();
+                        });
+                        jQuery('.dp-ppp-vb-finish').click(function () {
+                            jQuery('#dp-ppp-vb-wrapper').remove();
+                        });
+                        jQuery('.dp-ppp-vb-clean').click(function () {
+                            taxonomies_input.trigger('focus').val('').trigger('blur');
+                        });
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        jQuery('#dp-ppp-vb-modal').append(errorThrown);
+                    });
+                }
+            }
+        });
+        /*
+         * Vb Ajax modal for include term
+         */
+        jQuery(document).on('focus', '#et-fb-include_categories, #et-fb-include_tags, #et-fb-exclude_tags', function () {
+            if (isPppVbModule(jQuery(this))) {
+                var terms_input = jQuery(this);
+                var input_values = jQuery(this).val();
+                var cpt = jQuery('#et-fb-custom_post_types').val();
+                var tax = 'all';
+                if (jQuery(this).prop('id') === 'et-fb-include_tags' || jQuery(this).prop('id') === 'et-fb-exclude_tags') {
+                    tax = jQuery('#et-fb-taxonomy_tags').val();
+                }
+                if (input_values !== '') {
+                    if (input_values.includes(',')) {
+                        input_values = input_values.split(',');
+                    } else {
+                        input_values = [input_values];
+                    }
+                }
+                if (jQuery('body').find('#dp-ppp-vb-wrapper').length === 0) {
+                    jQuery('body').append(modal);
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: window.et_fb_options.ajaxurl,
+                        data: {
+                            action: 'dpppp_get_taxonomies_terms_action',
+                            tax: (tax === undefined || tax === '') ? 'all' : tax,
+                            cpt: (cpt === undefined || cpt === '') ? 'post' : cpt,
+                        }
+                    }).done(function (data, textStatus, jqXHR) {
+                        jQuery('.dp-ppp-vb-loader').remove();
+                        jQuery('#dp-ppp-vb-modal').append(data);
+                        jQuery('#dp-ppp-vb-modal').find('option').each(function () {
+                            var opt_val = jQuery(this).val();
+                            if (input_values.includes(opt_val)) {
+                                jQuery(this).prop('selected', true);
+                            }
+                        });
+                        jQuery('.dp-ppp-vb-submit').click(function () {
+                            var terms = jQuery('.dp-ppp-vb-select').val();
+                            terms_input.trigger('focus').val(terms.join(',')).trigger('blur');
+                            jQuery('.dp-ppp-vb-finish').click();
+                        });
+                        jQuery('.dp-ppp-vb-finish').click(function () {
+                            jQuery('#dp-ppp-vb-wrapper').remove();
+                        });
+                        jQuery('.dp-ppp-vb-clean').click(function () {
+                            terms_input.trigger('focus').val('').trigger('blur');
+                        });
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        jQuery('#dp-ppp-vb-modal').append(errorThrown);
+                    });
+                }
+            }
+        });
+    }
+
+    function isPppVbModule(trigger) {
+        var modal_title = trigger.parents(".et-fb-modal__content").siblings('.et-fb-modal__header').find('.et-fb-modal__title').text();
+        if (modal_title.includes('DP Filterable Blog') || modal_title.includes('DP Blog Portfolio') || modal_title.includes('DP Fullwidth Blog')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+});

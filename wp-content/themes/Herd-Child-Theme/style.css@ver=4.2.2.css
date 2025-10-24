@@ -1,0 +1,556 @@
+/* 
+ Theme Name:     Herd Child Theme
+ Author:         Herd
+ Author URI:     https://www.weareherd.co.uk 
+ Version:        1.0 
+ Template:		   Divi
+ Description:	   Your custom theme created by Herd
+*/ 
+
+
+/* --------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------                                                                                                   
+									   	  Site by: HERD
+									https://www.weareherd.co.uk 
+
+                                                                                                    
+              `/////`                                                          -////:               
+              -ddddd:                                                          sddddd               
+              -ddddd:                                                          sddddd               
+              -ddddd:``..``             ``.--.`              ```````   ``.-..` sddddd               
+              -dddddyhddddyo/`       ./shddddddyo:`       .+shddddy/-+shdddddhyhddddd               
+              -ddddddddddddddh/    .odddddddddddddh/    .sddddddh/-sddddddddddddddddd               
+              -ddddddho+oydddddo  -hdddddhyssyddddddy` .hdddddhs-:hdddddhsosydddddddd               
+              -ddddds`    +ddddd-`hddddd/`    .sddddds sddddh-  .dddddh:     .sdddddd               
+              -ddddd:     .ddddd//dddddddddddddddddddd`ydddds   +ddddd.        yddddd               
+              -ddddd:     .ddddd//dddddddddddddddddddd`ydddds   +ddddd.        yddddh               
+              -ddddd:     .ddddd/`hddddd/.````.::::::. ydddds   -dddddy-     .oddddd+               
+              -ddddd:     .ddddd/ -hdddddhsooyhhhhhhy` ydddds    /dddddhyoooyhddddds`               
+              -ddddd:     .ddddd/  .sdddddddddddddh+`  ydddds     -sdddddddddddddh/                 
+              -ddddd:     .ddddd/    .+shddddddys/`    ydddds      `-+yhdddddhyo:`                  
+              `-----`      -----`      ``.----.`       -----.         ``.---.``                     
+                                                                                                                                                                                                      
+                                                                           .                        
+                                                                           -                        
+                                                                  .`    ```````    ``               
+                                                                   . `.---------.```                
+                                                                    .---.-.`--.---.                 
+                                                                   .---.`.`-`. ----.                
+                                                              ```  ---.`./--::.`.--- ````           
+                                                                   ------s:-/s------                
+                                                                   .-----s:-/s-----`                
+                                    `.-//++++//:-..``  `.           `----s:-/s----`                 
+                            `.-:+-/osyyyyyyyyyyyyysssoos/             `--s:-/s-.`                   
+                         `:ossyyyyyyyyyyyyyyyyyyyyyyyyyy/.`            .-s:-/s-`                    
+                        `oyyyyyyyyyyyyyyyyyyyyyyyyyyyyyysy`            `-/--:/-`                    
+                        :yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyo             :sssssss-                    
+                        /yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy+             `:/oss/:`                    
+                        /yyyy://++ooossssssssoooo+//:syyy+                ```                       
+                        /yo++......................../+oy+                                          
+                        /y-.............................s+             `.                           
+                        /o..............................++             ..`                          
+                        /:....----..............----....-+             ..`                          
+                        /:--:oosss+----....----/sssoo:::-+             ..`..``` `                   
+                       /hhyo////:///+osooooso+//:::///+yhh/            ..........`                  
+                       -hh-...````....ohyyho....````...-hy-        .`  ..........`                  
+                      `.+h-..``ss/`...oo--oo.... os+`..-yo.`       `..`..........`                  
+                      .-+/+-...::-.../s----s/....-:-..-+:+--        `............                   
+                      .-+:-/////:///+/------/+/////////--o--          ..........`                   
+                      `.+o-....---....------.....-......oo-`           `.......`                    
+                        /ys/..........------..........:sy+              ```````                     
+                        :yyyyo++++++++++++++++++++++oyyyy+             `````````                    
+                        .yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy:             `````````                    
+                         +yyyyyyyyyy+:++ooo+//yyyyyyyyyys              `````````                    
+                         `oyyyyyyyyyo--....-./yyyyyyyyys.             `````````                     
+                          `+yyyyyyyyys+////+syyyyyyyyyo.              `````````                     
+                            -oyyyyyyyyyyyyyyyyyyyyyys:                `````````                     
+                              -+syyyyyyyyyyyyyyyyy+:`                `````````                      
+                                `.:osssyyyyssso/-`                  `````````                       
+                                   .--:::::::-`                    `````````                        
+                                   .----------`                  ``````````                         
+                               ``````..----..```````          ````````````                          
+                      ``````````````````````````````````````````````````````````                    
+                    ``````````````````````````-+++++++++++++++++++++++++++++++++`                   
+                   ````````````-.`````````````-ooooooooooooooooooooooooooooooooo`                   
+                  `````````````/:--```.--.``.-/ooooooooooooooooooooooooooooooooo`                   
+                 ``````````````/:.:/.:/::/:-/-/ooooooooooooooooooooooooooooooooo`                   
+                ```````````````/-`./-//-::--/`:ooooooooooooooooooooooooooooooooo`                   
+               ````````` ``````:.`.:.`----`.:`-ooooooooooooooooooooooooooooooooo`                   
+             ``````````  `````````````````````-ooooooooooooooooooooooooooooooooo`                   
+            ``````````   ``.--..``````````````-ooooooooooooooooooooooooooooooooo`                   
+           ``````````````.------.`````````````-ooooooooooooooooooooooooooooooooo`                   
+          ``````````````-------:/.````````````-ooooooooooooooooooooooooooooooooo`                   
+           `````````````.----:oyhhs:``````````-ooooooooooooooooooooooooooooooooo`                   
+        .----------------:/+oyhhhhhy-oooooooooosssssssssssssssssssssssssssssssss----`               
+       -yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyo               
+       -yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyys               
+                                                                                    
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------- */  
+
+/* ------------------------------------------ PARENT THEME CSS FIXES ------------------------------------------- */ 
+
+
+/* -------------------------------------*/
+/*-- COMMONLY NEEDED NAVIGATION FIXES --*/
+/* -------------------------------------*/
+
+/*-- REMOVING THE SUBNAV ARROW --*/
+#et-top-navigation #top-menu li.menu-item-has-children a::after,
+#et-top-navigation #top-menu li.current-menu-item ul.sub-menu li.menu-item a::after,
+#et-top-navigation #top-menu li.current-page-ancestor ul.sub-menu li.menu-item a::after,
+#et-top-navigation #top-menu li.current-page-ancestor ul.sub-menu li.current-menu-item a::after {
+  display: none;
+}
+
+#top-menu li.menu-item-has-children a {
+  padding-right: 0px!important;
+}
+
+/*-- COLLAPSING THE MOBILE NAVIGATION --*/
+#main-header .et_mobile_menu .menu-item-has-children > a { background-color: transparent; position: relative; }
+#main-header .et_mobile_menu .menu-item-has-children > a:after { font-family: 'ETmodules'; text-align: center; speak: none; font-weight: normal; font-variant: normal; text-transform: none; -webkit-font-smoothing: antialiased; position: absolute; }
+#main-header .et_mobile_menu .menu-item-has-children > a:after { font-size: 16px; content: '\4c'; top: 13px; right: 10px; }
+#main-header .et_mobile_menu .menu-item-has-children.visible > a:after { content: '\4d'; }
+#main-header .et_mobile_menu ul.sub-menu { display: none !important; visibility: hidden !important;  transition: all 1.5s ease-in-out;}
+#main-header .et_mobile_menu .visible > ul.sub-menu { display: block !important; visibility: visible !important; }
+#main-header .et_mobile_menu .location, #main-header .et_mobile_menu .telephone-number, #main-header .et_mobile_menu .book-now-button {display: none;}
+
+#top-menu li.mobile-only,
+#top-menu li ul.sub-menu li.mobile-only {
+  display: none;
+}
+
+/*-- IMPROVING THE HAMBURGER --*/
+.mobile_menu_bar:before {
+  font-weight: bold;
+  font-size:50px;
+  left: -18px!important;
+}
+
+.mobile_nav.opened .mobile_menu_bar:before {
+ content: '\4d';
+}
+
+/* -------------------------------------*/
+/*------ REORDER COLUMNS ON MOBILE -----*/
+/* -------------------------------------*/
+
+@media all and (max-width: 980px) {
+/*** wrap row in a flex box ***/
+  .custom_row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  flex-wrap: wrap;
+  }
+  /*** custom classes that will designate the order of columns in the flex box row ***/
+  .first-on-mobile {
+  -webkit-order: 1;
+  order: 1;
+  }
+  .second-on-mobile {
+  -webkit-order: 2;
+  order: 2;
+  }
+  .third-on-mobile {
+  -webkit-order: 3;
+  order: 3;
+  }
+  .fourth-on-mobile {
+  -webkit-order: 4;
+  order: 4;
+  }
+  /*** add margin to last column ***/
+  .custom_row:last-child .et_pb_column:last-child {
+  margin-bottom: 30px;
+  }
+}
+
+/* -----------------------------------------------*/
+/*------ CHANGE PORTFOLIO GRID TO 3 COLUMNS -----*/
+/* ----------------------------------------------*/
+
+
+@media only screen and ( max-width: 500px ) {
+ 
+ .three-column-grid .et_pb_grid_item {
+  width: 100% !important;
+  margin: 0 0 8% 0 !important;
+  }
+ 
+}
+
+@media only screen and ( min-width: 768px ) {
+ 
+  .three-column-grid .et_pb_grid_item {
+  width: 30.666% !important;
+  margin: 0 4% 4% 0 !important;
+  }
+   
+  .three-column-grid .et_pb_grid_item:nth-child(3n) {
+  margin-right: 0 !important;
+  }
+   
+  .three-column-grid .et_pb_grid_item:nth-child(3n+1) {
+  clear: left;
+  }
+   
+  .three-column-grid .et_pb_grid_item:nth-child(4n+1) {
+  clear: unset !important;
+  }
+ 
+}
+
+/* -----------------------------------------------*/
+/*------ CHANGE PORTFOLIO GRID TO 2 COLUMNS -----*/
+/* ----------------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+  .two-column-grid .et_pb_grid_item {
+  width: 100% !important;
+  margin: 0 0 8% 0 !important;
+  } 
+}
+
+@media only screen and ( max-width: 768px ) {
+  .two-column-grid .et_pb_grid_item {
+  width: 48% !important;
+  margin: 0 4% 4% 0 !important;
+  }
+   
+  .two-column-grid .et_pb_grid_item:nth-child(2n) {
+  margin-right: 0 !important;
+  }
+   
+  .two-column-grid .et_pb_grid_item:nth-child(3n+1) {
+  clear: unset !important;
+  }
+}
+
+/* -----------------------------------------------*/
+
+ 
+/* ------------------------------ PUT NEW CUSTOM CSS BELOW THIS LINE ------------------------------------------ */ 
+
+
+/********* TYPOGRAPHY STYLES **********/
+
+body {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body p strong,
+body p b {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1, h2 {
+  font-family: termina, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h3, h4,
+span.et_pb_fullwidth_header_subhead,
+.title-font p,
+.footer-menu ul li,
+.et_pb_tabs_controls li a {
+  font-family: termina, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h5, h6 {
+  font-family: termina, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/********* NAVIGATION STYLES **********/
+
+#top-menu-nav ul#top-menu li.current-menu-item a:before,
+#top-menu-nav ul#top-menu li a:hover:before {
+    content: "";
+    position: absolute;
+    background-color: #FE6223;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    left: 40%;
+    top: -20px;
+}
+
+/*#mobile_menu li {
+  position: relative;
+}
+
+#mobile_menu li.current-menu-item a:after {
+    content: "";
+    position: absolute;
+    background-color: #FE6223;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    left: 0px;
+    top: 17px;
+}*/
+
+#top-menu-nav ul#top-menu li ul.sub-menu li a:before {
+  display: none;
+}
+
+
+/********* THEME EXPLORER STYLES **********/
+
+.subject-box:hover:after {
+    content: "\35";
+    text-shadow: none;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1em;
+    font-family: ETmodules!important;
+    position: absolute;
+    background-color: #FE6223;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    bottom: 40px;
+    left: 45%;
+}
+
+.subject-box:hover
+{
+    position: relative;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    transition-duration: 2s;
+    transition-timing-function: ease;
+    -webkit-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
+    transform-origin: bottom center;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+/********* LISTING FILTER STYLES **********/
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li {
+    min-width: 228px;
+    max-width: 240px;
+}
+
+/********* CASE STUDY LISTING STYLES **********/
+
+.project-list h2.entry-title {
+  margin-bottom: 0px;
+  padding-top: 0px;  
+}
+
+.project-list a.more-link {
+  margin-top: 6px;
+  display: block;;  
+}
+
+
+.project-list a.more-link:after {
+    content: "\35";
+    text-shadow: none;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1em;
+    font-family: ETmodules!important;
+    position: absolute;
+    background-color: #FE6223;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    left: 100px;
+}
+
+@media only screen and (min-width: 768px) {
+  .project-list a.more-link:after {
+      bottom: 3px;
+  }
+}
+
+.project-list a.more-link:hover,
+.project-list a.more-link:hover {
+  color: #FE6223!important;
+}
+
+.project-list a.more-link {
+    font-weight: 700;
+    font-size: 18px;
+    color: #3c3c3c!important;
+    transition: color 300ms ease 0ms;
+}
+
+.et_pb_portfolio_list .dp_portfolio_list_item {
+    margin: 0 0 2.5% 0 !important;
+}
+
+/********* PEOPLE LISTING STYLES **********/
+
+
+.people-list .dynamic-list h4 {
+    font-size: 26px;
+    color: #fe6223!important;
+    font-family: termina,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.people-list .dynamic-list p.dp-post-excerpt a.more-link:after, 
+
+
+.people-list p.dp-post-excerpt a.more-link {
+  margin-top: 20px;
+  display: block;;  
+}
+
+.people-list .dynamic-list p.dp-post-excerpt a.more-link {
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff!important;
+}
+
+.people-list .dynamic-list p.dp-post-excerpt a.more-link:after,
+.people-list p.dp-post-excerpt a.more-link:after {
+    content: "\35";
+    text-shadow: none;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1em;
+    font-family: ETmodules!important;
+    position: absolute;
+    background-color: #FE6223;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    left: 100px;
+}
+
+@media only screen and (min-width: 768px) {
+  .people-list .dynamic-list p.dp-post-excerpt a.more-link:after,
+  .people-list p.dp-post-excerpt a.more-link:after {
+      bottom: 3px;
+  }
+}
+
+.people-list p.dp-post-excerpt a.more-link:hover {
+  color: #FE6223!important;
+}
+
+@media only screen and (max-width: 980px) {
+  .people-list .et_pb_portfolio_list .dp_portfolio_item_left {
+      text-align: left;
+      margin-bottom: 20px;
+  }
+}
+
+.et_pb_portfolio_list .dp_portfolio_item_left {
+  width: 19%;
+}
+
+/********* DATASET LISTING STYLES **********/
+
+ul.datasets {
+  list-style: circle;
+  padding-left: 20px;
+}
+
+ul.datasets li {
+      margin-bottom: 20px;
+      margin-top: 20px;
+}
+
+ul.datasets li a {
+  font-weight: 600;
+}
+
+ul.datasets li a:hover {
+  color: #FFFFFF!important;
+}
+
+
+/********* PUBLICATION LISTING STYLES **********/
+
+.dp-custom-field {
+    margin-right: 15px;
+    display: inline;
+}
+
+.dp-post-excerpt {
+  margin-top: 20px;
+}
+
+
+/*
+p.banana {
+	display: block;
+    top: -180px;
+    position: relative;
+	color:#fe6223;
+}*/
+
+/*#publist .project-list p.dp-post-excerpt a.more-link:after {
+	    margin-left: 10px;
+    position: static;
+}*/
+
+/********* TAB STYLES **********/
+
+/*ul.et_pb_tabs_controls {
+  background-color: #f1f9fa;
+}
+
+ul.et_pb_tabs_controls:after {
+  border-top: none;
+}
+
+.et_pb_tabs_controls li {
+  border-right: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .et_pb_tabs_controls li {
+    height: 100px;
+  }
+}*/
+
+/********* FOOTER STYLES **********/
+
+#main-footer {
+  display: none;
+}
+
+.single .et_pb_post {
+    margin-bottom: 0px!important;
+}
+
+
+/********* ADJUSTMENT OF ANCHOR POSITION TO ACCOUNT FOR HEADER   **********/
+a.offsetAnchor {
+	display: block;
+	position: relative;
+	top: -220px;
+	visibility: hidden;
+}
